@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis from "lenis/react";
 import { useRef } from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -28,7 +29,7 @@ const StickyCard002 = ({
   imageClassName,
 }: StickyCard002Props) => {
   const container = useRef(null);
-  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const imageRefs = useRef<(HTMLElement | null)[]>([]);
 
   useGSAP(
     () => {
@@ -112,18 +113,23 @@ const StickyCard002 = ({
           )}
         >
           {cards.map((card, i) => (
-            <img
+            <div
               key={card.id}
-              src={card.image}
-              alt={card.alt || ""}
               className={cn(
-                "rounded-4xl absolute h-full w-full object-cover",
+                "rounded-4xl absolute h-full w-full",
                 imageClassName,
               )}
               ref={(el) => {
                 imageRefs.current[i] = el;
               }}
-            />
+            >
+              <Image
+                src={card.image}
+                alt={card.alt || ""}
+                fill
+                className="rounded-4xl object-cover"
+              />
+            </div>
           ))}
         </div>
       </div>
