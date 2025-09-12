@@ -224,7 +224,7 @@ const VideoPopOver = ({
         <button
           title="X"
           onClick={() => setShowVideoPopOver(false)}
-          className="absolute top-25 right-13 z-50 rounded-full bg-black/60 p-2 text-black transition hover:bg-black/80 hover:text-white active:scale-95"
+          className="absolute top-25 right-13 z-50 hidden md:block lg:block rounded-full bg-black/60 p-2 text-black transition hover:bg-black/80 hover:text-white active:scale-95"
         >
          
             <X size={24} />
