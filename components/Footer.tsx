@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter } from "lucide-react"
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-4">
           <motion.a
-            href="https://github.com/yourusername"
+            href="https://github.com/realpuneet"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
@@ -32,7 +33,7 @@ const Footer = () => {
           </motion.a>
 
           <motion.a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/realpuneet"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
@@ -42,13 +43,13 @@ const Footer = () => {
           </motion.a>
 
           <motion.a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/realpuneet_jsx"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <Twitter size={20} />
+            <FaXTwitter size={20} />
           </motion.a>
         </div>
       </div>

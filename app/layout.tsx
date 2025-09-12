@@ -15,9 +15,11 @@ import Footer from "@/components/Footer";
 // });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "Animated responsive portfolio built with Next.js + TypeScript + Shadcn/UI",
-}
+  title: "Puneet Yadav | Full Stack MERN Developer Portfolio",
+  description:
+    "Explore the animated, responsive portfolio of Puneet Ji — a full stack MERN developer skilled in React, Next.js, TypeScript, and modern UI with Tailwind & Shadcn. Showcasing projects, design, and development expertise.",
+};
+
 
 export default function RootLayout({
   children,

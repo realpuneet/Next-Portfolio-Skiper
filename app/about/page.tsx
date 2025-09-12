@@ -3,6 +3,14 @@ import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { FaXTwitter } from "react-icons/fa6";
+import { SiPostman } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { FaDiscord } from "react-icons/fa";
+import { SiFramer } from "react-icons/si";
+import { AiFillApi } from "react-icons/ai";
+
+
 import {
   Code2,
   Sparkles,
@@ -10,32 +18,30 @@ import {
   Monitor,
   Server,
   Database,
-  Zap,
   ArrowRight,
   CheckCircle2,
   Github,
   Linkedin,
   Mail,
   Globe,
-  Instagram,
-  Twitter
+  Instagram
 } from "lucide-react"
 import Link from "next/link"
 
 const skills = [
   { name: "MERN Stack", icon: <Database className="w-5 h-5" />, level: 95 },
   { name: "Next.js", icon: <Globe className="w-5 h-5" />, level: 90 },
-  { name: "API Testing", icon: <Server className="w-5 h-5" />, level: 88 },
+  { name: "API Testing", icon: <AiFillApi className="w-5 h-5" />, level: 88 },
   { name: "TypeScript", icon: <Code2 className="w-5 h-5" />, level: 85 },
-  { name: "Postman", icon: <Zap className="w-5 h-5" />, level: 92 },
-  { name: "VSCode", icon: <Monitor className="w-5 h-5" />, level: 95 },
-  { name: "Discord", icon: <Sparkles className="w-5 h-5" />, level: 87 },
+  { name: "Postman", icon: <SiPostman className="w-5 h-5" />, level: 92 },
+  { name: "VSCode", icon: <VscVscode className="w-5 h-5" />, level: 95 },
+  { name: "Discord", icon: <FaDiscord className="w-5 h-5" />, level: 87 },
   { name: "Material-UI", icon: <Sparkles className="w-5 h-5" />, level: 90 },
   { name: "ShadCN UI", icon: <Sparkles className="w-5 h-5" />, level: 93 },
-  { name: "Framer Motion", icon: <Sparkles className="w-5 h-5" />, level: 88 },
+  { name: "Framer Motion", icon: <SiFramer className="w-5 h-5" />, level: 88 },
 ]
 
-const socialIcons = [Github, Linkedin,Instagram, Twitter, Mail];
+const socialIcons = [Github, Linkedin, Instagram, FaXTwitter, Mail];
 const socialLinks = [
   "https://github.com/realpuneet",
   "https://linkedin.com/in/realpuneet",
@@ -268,8 +274,8 @@ export default function AboutPage() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-2 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 ${activeTab === tab
-                    ? "bg-[#1F3A4B] text-[#C2F84F] shadow-lg"
-                    : "text-[#1F3A4B] hover:bg-[#C2F84F]/20 cursor-pointer"
+                  ? "bg-[#1F3A4B] text-[#C2F84F] shadow-lg"
+                  : "text-[#1F3A4B] hover:bg-[#C2F84F]/20 cursor-pointer"
                   }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}

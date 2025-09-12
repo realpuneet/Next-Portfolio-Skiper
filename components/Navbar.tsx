@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Skiper58 } from "./ui/skiper-ui/skiper58"
 import Link from "next/link"
+import { Skiper25 } from "./ui/skiper-ui/skiper25"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,6 +32,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 items-center">
           <Skiper58 />
+          <Skiper25 />
         </div>
 
         {/* Mobile Menu Button */}
@@ -54,6 +56,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center gap-6 py-6">
               <Skiper58 /> {/* ✅ animated nav reused here */}
+              <Skiper25 />
             </div>
           </motion.div>
         )}
