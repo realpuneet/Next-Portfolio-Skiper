@@ -17,6 +17,7 @@ import {
   Linkedin,
   Mail,
   Globe,
+  Instagram,
   Twitter
 } from "lucide-react"
 import Link from "next/link"
@@ -34,10 +35,11 @@ const skills = [
   { name: "Framer Motion", icon: <Sparkles className="w-5 h-5" />, level: 88 },
 ]
 
-const socialIcons = [Github, Linkedin, Twitter, Mail];
+const socialIcons = [Github, Linkedin,Instagram, Twitter, Mail];
 const socialLinks = [
   "https://github.com/realpuneet",
   "https://linkedin.com/in/realpuneet",
+  "https://instagram.com/realpuneet",
   "https://x.com/realpuneet_jsx",
   "mailto:puneety259@gmail.com"
 ];
@@ -267,7 +269,7 @@ export default function AboutPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-2 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 ${activeTab === tab
                     ? "bg-[#1F3A4B] text-[#C2F84F] shadow-lg"
-                    : "text-[#1F3A4B] hover:bg-[#C2F84F]/20"
+                    : "text-[#1F3A4B] hover:bg-[#C2F84F]/20 cursor-pointer"
                   }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}

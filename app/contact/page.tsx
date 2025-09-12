@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, MapPin, Send } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -59,7 +59,7 @@ export default function ContactPage() {
                 className="flex items-center gap-3 sm:gap-4 text-sm sm:text-base"
               >
                 <MapPin className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: "#C2F84F" }} />
-                <span>Delhi, India</span>
+                <span>Bhopal, India</span>
               </motion.div>
             </div>
           </CardContent>
