@@ -233,7 +233,7 @@ const VideoPopOver = ({
         <source src="/showreel/Showreel.mp4" type="video/mp4"/>
         <VideoPlayer style={{ width: "100%", height: "100%" }}>
           <VideoPlayerContent
-            src="/showreel/Showreel.mp4"
+            src="https://ik.imagekit.io/s2sj5wcjj/UX%20DESIGN%20WED%20and%20APP%20development%20%20Showreel.mp4?updatedAt=1757678393353"
             autoPlay
             slot="media"
             className="w-full object-cover"
