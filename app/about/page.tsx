@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -128,7 +129,7 @@ export default function AboutPage() {
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6" style={{ color: "#1F3A4B" }}>
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1F3A4B] to-[#C2F84F]">Puneet</span>
+            Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1F3A4B] to-[#C2F84F]">Puneet</span>
           </h2>
 
           <p className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4" style={{ color: "#1F3A4B" }}>
@@ -409,7 +410,7 @@ export default function AboutPage() {
               style={{ backgroundColor: "#C2F84F", color: "#1F3A4B" }}
             >
               <span className="relative z-10 flex items-center gap-3">
-                Let's Build Together
+                Let&apos;s Build Together
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -419,7 +420,7 @@ export default function AboutPage() {
               </span>
               <div className="absolute inset-0 bg-[#1F3A4B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               <span className="absolute inset-0 flex items-center justify-center gap-3 text-[#C2F84F] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Let's Build Together
+                Let&apos;s Build Together
                 <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />
               </span>
             </Button>

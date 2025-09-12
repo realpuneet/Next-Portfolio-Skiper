@@ -1,9 +1,6 @@
 import About from '@/components/sections/About'
-import { Contact } from '@/components/sections/Contact'
 import {Hero} from '@/components/sections/Hero'
-import { Projects } from '@/components/sections/Project'
 import Video from '@/components/sections/Video'
-import { Skiper19 } from '@/components/ui/skiper-ui/skiper19'
 import React from 'react'
 
 const Home = () => {

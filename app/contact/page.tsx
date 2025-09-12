@@ -103,7 +103,7 @@ export default function ContactPage() {
                   type="text"
                   placeholder="Your Name"
                   required
-                  className="bg-white text-black rounded-xl"
+                  className="bg-white text-white rounded-xl"
                 />
               </motion.div>
 
@@ -116,7 +116,7 @@ export default function ContactPage() {
                   type="email"
                   placeholder="Your Email"
                   required
-                  className="bg-white text-black rounded-xl"
+                  className="bg-white text-white rounded-xl"
                 />
               </motion.div>
 
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   placeholder="Your Message"
                   rows={4}
                   required
-                  className="bg-white text-black rounded-xl"
+                  className="bg-white text-white rounded-xl"
                 />
               </motion.div>
 

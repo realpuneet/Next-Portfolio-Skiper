@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
@@ -64,7 +65,7 @@ export default function ProjectsPage() {
             show: { opacity: 1, transition: { staggerChildren: 0.3 } },
           }}
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
@@ -74,11 +75,14 @@ export default function ProjectsPage() {
                 style={{ backgroundColor: "#1F3A4B" }}
               >
                 {/* Project Image */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative w-full h-48">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
                 <CardContent className="p-6 text-white">
                   <CardHeader className="text-2xl font-bold text-[#C2F84F] mb-3">
