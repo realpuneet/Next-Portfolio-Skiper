@@ -230,10 +230,10 @@ const VideoPopOver = ({
             <X size={24} />
           
         </button>
-
+        <source src="/showreel/Showreel.mp4" type="video/mp4"/>
         <VideoPlayer style={{ width: "100%", height: "100%" }}>
           <VideoPlayerContent
-            src="/Showreel.mp4"
+            src="/showreel/Showreel.mp4"
             autoPlay
             slot="media"
             className="w-full object-cover"

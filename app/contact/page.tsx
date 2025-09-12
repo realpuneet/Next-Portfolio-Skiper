@@ -47,18 +47,10 @@ export default function ContactPage() {
                 className="flex items-center gap-3 sm:gap-4 text-sm sm:text-base"
               >
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: "#C2F84F" }} />
-                <span>puneet@example.com</span>
+                <span>puneety259@gmail.com</span>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-                className="flex items-center gap-3 sm:gap-4 text-sm sm:text-base"
-              >
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: "#C2F84F" }} />
-                <span>+91 98765 43210</span>
-              </motion.div>
+              
 
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
