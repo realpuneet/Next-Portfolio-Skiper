@@ -21,6 +21,12 @@ export const metadata = {
     "Explore the animated, responsive portfolio of Puneet Ji — a full stack MERN developer skilled in React, Next.js, TypeScript, and modern UI with Tailwind & Shadcn. Showcasing projects, design, and development expertise.",
 };
 
+//add favicon
+export const favicon = {
+  rel: "icon",
+  href: "/favicon.png",
+  type: "image/x-icon",
+}
 
 export default function RootLayout({
   children,
