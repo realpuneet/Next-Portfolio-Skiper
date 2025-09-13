@@ -6,8 +6,51 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Send } from "lucide-react"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
+import { useState } from "react"
+
+interface ContactFormData {
+  name: string
+  email: string
+  message: string
+}
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>()
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true)
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        toast.success("Message sent successfully! I'll get back to you soon.")
+        reset()
+      } else {
+        const errorData = await response.json()
+        toast.error(errorData.error || "Failed to send message. Please try again.")
+      }
+    } catch (error) {
+      toast.error("Network error. Please check your connection and try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+    console.log(data);
+  }
+
   return (
     <section
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 pt-22 pb-15"
@@ -85,7 +128,7 @@ export default function ContactPage() {
               Apna idea, query ya joke bhi likh sakte ho 😂
             </p>
 
-            <form className="space-y-4 sm:space-y-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -94,9 +137,14 @@ export default function ContactPage() {
                 <Input
                   type="text"
                   placeholder="Your Name"
-                  required
-                  className="bg-white text-white rounded-xl"
+                  {...register("name", { required: "Name is required" })}
+                  className={`bg-white text-white rounded-xl border ${
+                    errors.name ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.name && (
+                  <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+                )}
               </motion.div>
 
               <motion.div
@@ -107,9 +155,20 @@ export default function ContactPage() {
                 <Input
                   type="email"
                   placeholder="Your Email"
-                  required
-                  className="bg-white text-white rounded-xl"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Please enter a valid email",
+                    },
+                  })}
+                  className={`bg-white text-white rounded-xl border ${
+                    errors.email ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+                )}
               </motion.div>
 
               <motion.div
@@ -120,9 +179,14 @@ export default function ContactPage() {
                 <Textarea
                   placeholder="Your Message"
                   rows={4}
-                  required
-                  className="bg-white text-white rounded-xl"
+                  {...register("message", { required: "Message is required" })}
+                  className={`bg-white text-white rounded-xl border ${
+                    errors.message ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+                )}
               </motion.div>
 
               <motion.div
@@ -132,10 +196,11 @@ export default function ContactPage() {
               >
                 <Button
                   type="submit"
-                  className="w-full rounded-xl text-lg font-semibold flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full rounded-xl text-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-50"
                   style={{ backgroundColor: "#C2F84F", color: "#1F3A4B" }}
                 >
-                  Send Message <Send className="w-5 h-5" />
+                  {isSubmitting ? "Sending..." : "Send Message"} <Send className="w-5 h-5" />
                 </Button>
               </motion.div>
             </form>
