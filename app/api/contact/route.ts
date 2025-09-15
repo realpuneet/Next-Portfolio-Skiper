@@ -13,19 +13,24 @@ export async function POST(req: Request) {
             );
         }
 
+        // Debug logs for environment variables
+        console.log("EMAIL_USER set:", !!process.env.EMAILUSER);
+        console.log("EMAIL_PASS set:", !!process.env.EMAILPASS);
+        console.log("EMAIL_TO set:", !!process.env.EMAILTO);
+
         // Create transporter with Gmail SMTP
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: process.env.EMAILUSER,
+                pass: process.env.EMAILPASS,
             },
         });
 
         // Define email options
         const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_TO,
+            from: process.env.EMAILUSER,
+            to: process.env.EMAILTO,
             subject: `New Contact Form Submission from ${name}`,
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
             html: `<p><strong>Name:</strong> ${name}</p>
