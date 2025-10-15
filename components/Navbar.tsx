@@ -55,7 +55,7 @@ export default function Navbar() {
             className="md:hidden bg-[#1F3A4B]/90 backdrop-blur-lg shadow-lg w-full"
           >
             <div className="flex flex-col items-center gap-6 py-6">
-              <Skiper58 /> {/* ✅ animated nav reused here */}
+              <Skiper58 onLinkClick={() => setIsOpen(false)} /> {/* ✅ animated nav reused here */}
               <Skiper25 />
             </div>
           </motion.div>

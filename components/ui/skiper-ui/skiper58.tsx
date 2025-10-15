@@ -13,7 +13,7 @@ const navigationItems = [
   { name: "Services", href: "/service", description: "[4]" },
 ];
 
-export const Skiper58 = () => {
+export const Skiper58 = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   return (
     <ul
       className="
@@ -31,6 +31,7 @@ export const Skiper58 = () => {
         href={item.href}
           className="relative flex cursor-pointer  flex-col items-center overflow-visible "
           key={index}
+          onClick={onLinkClick}
         >
           <div className="relative flex items-start ">
             <TextRoll

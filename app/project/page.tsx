@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
+import { Skiper48 } from "@/components/ui/skiper-ui/skiper48"
 
 export default function ProjectsPage() {
   return (
@@ -26,22 +27,9 @@ export default function ProjectsPage() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
+        className="w-full max-w-4xl flex flex-col items-center gap-10"
       >
-        <Card
-          className="w-[25rem] h-[18rem] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-[#C2F84F]"
-          style={{ backgroundColor: "#1F3A4B" }}
-        >
-          <CardContent className="flex items-center justify-center text-center">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-2xl sm:text-3xl font-bold text-[#C2F84F]"
-            >
-              🚀 Uploading Soon...
-            </motion.span>
-          </CardContent>
-        </Card>
+        <Skiper48 />
       </motion.div>
     </section>
   )
